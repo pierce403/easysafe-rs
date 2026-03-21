@@ -51,6 +51,8 @@ Working assumption for new implementation work:
   - CLI for local workspace management and sync
 - `frontend/`
   - React/TypeScript browser client using the same object/config model as the Rust implementation
+- `README.md`
+  - root project overview, architecture summary, quick start, and current caveats
 - `TODO.md`
   - phased roadmap for a practical POC
 - `CRYPTO_FEEDBACK.md`
