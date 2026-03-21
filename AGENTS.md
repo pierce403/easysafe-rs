@@ -85,7 +85,8 @@ cargo run -p easysafe-cli -- --dir /tmp/easysafe-ws2-XXXXXX cat <document-id> --
 Verified environment notes:
 
 - the repository root is `/home/pierce/projects/easysafe-rs`
-- the repository root itself is currently not a Git repository
+- the repository root is now a Git repository on branch `main`
+- the `origin` remote is `git@github.com:pierce403/easysafe-rs.git`
 - `easysafe-doc/` contains its own nested `.git/` directory
 
 ## Coding Conventions
@@ -112,8 +113,8 @@ Verified environment notes:
   - Solution: document assumptions and scope cuts before implementing.
 - Several important plaintext structures and protocol details are out of scope in the draft.
   - Solution: freeze a narrow modern v0 spec instead of trying to fill in every gap ad hoc.
-- The repository root is not a Git repository.
-  - Solution: do not assume `git status`, diffs, or commits are available at the root.
+- `easysafe-doc/` is a nested repository that should not be included in the root repo.
+  - Solution: keep `easysafe-doc/` ignored in the root `.gitignore`.
 - Browser crypto must match Rust object/config formats exactly enough for interoperability.
   - Solution: keep the stored-object JSON layout simple and deterministic, and verify with real builds and runtime smoke tests.
 - The frontend currently assumes an existing workspace already exists on the node.
