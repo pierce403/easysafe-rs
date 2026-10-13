@@ -129,6 +129,14 @@ Verified environment notes:
 - The repository has no `.github/workflows/` deployment pipeline or GitHub
   Pages site as of October 2026. A main-branch dependency merge does not
   confirm a deployed browser client; treat publication as a separate gate.
+- In this task environment, `/snap/bin/rustc` can trigger a broken toolchain
+  component install. Use matching direct binaries and set `RUSTC` and
+  `RUSTDOC` explicitly, for example the installed
+  `~/.rustup/toolchains/1.97.0-x86_64-unknown-linux-gnu/bin/` versions. With
+  patched `Cargo.lock` versions (rand 0.8.6 and 0.9.3, rpassword 7.5.0,
+  quinn-proto 0.11.15, rustls 0.23.45, rustls-webpki 0.103.15),
+  `cargo test --workspace --locked` passed. A disposable local node plus two
+  CLI workspaces completed init, encrypted commit, push, pull, list, and cat.
 - The frontend currently assumes an existing workspace already exists on the node.
   - Solution: initialize/publish workspaces with the CLI first, then open them in the browser.
 
