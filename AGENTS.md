@@ -119,6 +119,16 @@ Verified environment notes:
   - Solution: keep `easysafe-doc/` ignored in the root `.gitignore`.
 - Browser crypto must match Rust object/config formats exactly enough for interoperability.
   - Solution: keep the stored-object JSON layout simple and deterministic, and verify with real builds and runtime smoke tests.
+- For frontend security lockfile updates, compare installed `@noble/ciphers`,
+  `@noble/curves`, `@noble/hashes`, `hash-wasm`, React, and React DOM versions
+  before and after. The October 2026 npm audit repair cleared 11 build-tool
+  package findings while leaving those runtime versions unchanged. Verify with
+  `cd frontend && npm ci && npm audit --audit-level=low && npm run lint && npm run build`.
+  The existing lint run emits one `react-hooks/exhaustive-deps` warning at
+  `frontend/src/App.tsx:34` on both the original and refreshed lockfiles.
+- The repository has no `.github/workflows/` deployment pipeline or GitHub
+  Pages site as of October 2026. A main-branch dependency merge does not
+  confirm a deployed browser client; treat publication as a separate gate.
 - The frontend currently assumes an existing workspace already exists on the node.
   - Solution: initialize/publish workspaces with the CLI first, then open them in the browser.
 
