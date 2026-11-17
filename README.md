@@ -201,3 +201,10 @@ An end-to-end smoke test has also been run with:
 - [TODO.md](TODO.md)
 - [CRYPTO_FEEDBACK.md](CRYPTO_FEEDBACK.md)
 - [AGENTS.md](AGENTS.md)
+
+## Licensing scope
+
+Original code and documentation authored for this project by Dean Pierce are licensed under the [Apache License 2.0](LICENSE).
+Third-party dependencies, assets, and quoted material retain their respective licenses and notices. This grant does not relicense third-party work.
+
+The original EasySafe draft specification and any upstream documentation are excluded from this grant; this license covers the independently authored implementation and original project documentation only.

@@ -1,4 +1,5 @@
 [package]
+license.workspace = true
 name = "easysafe-node"
 version.workspace = true
 edition.workspace = true
